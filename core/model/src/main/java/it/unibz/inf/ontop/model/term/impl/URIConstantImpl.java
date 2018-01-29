@@ -37,7 +37,7 @@ public class URIConstantImpl implements URIConstant {
 	private final int identifier;
 	private final String iristr;
 
-	protected URIConstantImpl(String iri) {
+	public URIConstantImpl(String iri) {
 		this.iristr = iri;
 		this.identifier = iri.hashCode();
 	}

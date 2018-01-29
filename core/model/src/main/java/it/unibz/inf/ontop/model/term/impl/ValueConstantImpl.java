@@ -44,14 +44,14 @@ public class ValueConstantImpl implements ValueConstant {
 	 * @param type
 	 *            the constant type.
 	 */
-	protected ValueConstantImpl(String value, Predicate.COL_TYPE type) {
+	public ValueConstantImpl(String value, Predicate.COL_TYPE type) {
 		this.value = value;
 		this.language = null;
 		this.type = type;
 		this.string = getStringRepresentation();
 	}
 
-	protected ValueConstantImpl(String value, String language) {
+	public ValueConstantImpl(String value, String language) {
 		this.value = value;
 		this.language = language;
 		this.type = COL_TYPE.LANG_STRING;

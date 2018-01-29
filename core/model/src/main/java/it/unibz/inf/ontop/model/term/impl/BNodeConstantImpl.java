@@ -43,7 +43,7 @@ public class BNodeConstantImpl implements BNode {
 	 * @param uri
 	 *            URI from a term.
 	 */
-	protected BNodeConstantImpl(String name) {
+	public BNodeConstantImpl(String name) {
 		this.name = name;
 		this.identifier = name.hashCode();
 	}
