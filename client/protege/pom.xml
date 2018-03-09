@@ -3,7 +3,7 @@
     <parent>
         <artifactId>ontop-client</artifactId>
         <groupId>it.unibz.inf.ontop</groupId>
-        <version>3.0.0-beta-2-SNAPSHOT</version>
+        <version>3.0.0-beta-2</version>
         <relativePath>..</relativePath>
     </parent>
 
@@ -510,6 +510,10 @@
         <dependency>
             <groupId>org.eclipse.rdf4j</groupId>
             <artifactId>rdf4j-util</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.rdf4j</groupId>
+            <artifactId>rdf4j-queryrender</artifactId>
         </dependency>
         <dependency>
             <groupId>com.github.jsqlparser</groupId>
