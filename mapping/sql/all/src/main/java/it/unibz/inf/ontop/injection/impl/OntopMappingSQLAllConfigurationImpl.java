@@ -226,6 +226,13 @@ public class OntopMappingSQLAllConfigurationImpl extends OntopMappingSQLConfigur
 
         protected final void setMappingFile(String mappingFilename) {
             declareMappingDefinedCB.run();
+            /* Windows paths like C:\\... cause exception */
+        	File aux = new File(mappingFilename);
+        	if(aux.exists() && aux.isFile() && aux.canRead()){
+        		this.mappingFile = Optional.of(aux);
+        		return;
+        	}
+        	
             try {
                 URI fileURI = new URI(mappingFilename);
                 String scheme = fileURI.getScheme();
@@ -240,7 +247,7 @@ public class OntopMappingSQLAllConfigurationImpl extends OntopMappingSQLConfigur
                             "as mapping files");
                 }
             } catch (URISyntaxException e) {
-                throw new InvalidOntopConfigurationException("Invalid mapping file path: " + e.getMessage());
+            	throw new InvalidOntopConfigurationException("Invalid mapping file path: " + e.getMessage());
             }
         }
 

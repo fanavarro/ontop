@@ -171,6 +171,11 @@ public class OntopModelConfigurationImpl implements OntopModelConfiguration {
 
         @Override
         public final B propertyFile(String propertyFilePath) {
+        	File file = new File (propertyFilePath);
+        	if(file.exists() && file.isFile() && file.canRead()){
+        		return propertyFile(file);
+        	}
+        	
             try {
                 URI fileURI = new URI(propertyFilePath);
                 String scheme = fileURI.getScheme();
